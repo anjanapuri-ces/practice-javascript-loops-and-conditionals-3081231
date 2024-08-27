@@ -1,32 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Chapter 02-09</title>
-        <meta charset="utf-8"/>
-        <script src="../../display.js"></script>
-    </head>
-    
-    <body>
-        <p>Output appears below.</p>
-        <hr />
-        <p id="output"></p>
-    
-        <script>
-/*
- * This program determines the solution(s) for the
- * quadratic equation: ax^2 + bx + c = 0.
- *
- *   - Prompt the user for values of a, b, and c
- *   - Calculate the discriminant (b^2 - 4ac)
- *   - If the discriminant is negative, tell user
- *     there are no real number solutions.
- *   - Otherwise, if the discriminant is zero, calculate
- *     the single solution (-b / 2a), and print it.
- *   - Otherwise, the discriminant must be greater than zero;
- *     calculate and print both solutions:
- *        (-b + sqrt(b^2 - 4ac)) / 2a and
- *        (-b - sqrt(b^2 - 4ac) / 2a
- */
-        </script>
-    </body>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="display.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script src="../../display.js" </script>
+        <script defer src="js/lib/fontawesome-all.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>CSS: Scrolling &amp; Parallax</title>
+</head>
+
+<body>
+    <p>Output appears below.</p>
+    <hr />
+    <p id="output"></p>
+
+    <script>
+      let a = parseFloat(prompt('Enter the value of a'));
+      let b = parseFloat(prompt('Enter the value of b'));
+      let c = parseFloat(prompt('Enter the value of c'));
+      display (a + "x^2+" + b + "x+" + c + "= 0");
+
+      let discriminant = b * b - 4 * a * c;
+      let sqrtdisc = Math.sqrt(discriminant);
+      console.log(discriminant);
+      console.log(sqrtdisc);
+      if (discriminant < 0) {
+          display('There is no real solutions.');
+    }
+      else if (discriminant == 0) {
+          let singlesoln = -b / (2 * a);
+      display("The solution is " + singlesoln);
+    }
+      else {
+          let soln1 = (-b + sqrtdisc) / (2 * a);
+      let soln2 = (-b - sqrtdisc) / (2 * a);
+      display('soln 1 is' + soln1);
+      display('soln 2 is ' + soln2);
+    }
+
+      /*
+       * This program determines the solution(s) for the
+       * quadratic equation: ax^2 + bx + c = 0.
+       *
+       *   - Prompt the user for values of a, b, and c
+       *   - Calculate the discriminant (b^2 - 4ac)
+       *   - If the discriminant is negative, tell user
+       *     there are no real number solutions.
+       *   - Otherwise, if the discriminant is zero, calculate
+       *     the single solution (-b / 2a), and print it.
+       *   - Otherwise, the discriminant must be greater than zero;
+       *     calculate and print both solutions:
+       *        (-b + sqrt(b^2 - 4ac)) / 2a and
+       *        (-b - sqrt(b^2 - 4ac) / 2a
+       */
+    </script>
+</body>
+
 </html>
